@@ -9,12 +9,12 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import App from './components/App'
 
 import appStore from './stores/appStore'
-import  umbrellaStore from './stores/umbrellaStore'
+import  bookStore from './stores/bookStore'
 import userStore from './stores/userStore'
 
 const stores = {
     appStore,
-    umbrellaStore,
+    bookStore,
     userStore
 
 }

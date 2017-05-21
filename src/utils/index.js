@@ -44,7 +44,7 @@ export const isEmptyObject = obj => {
 export const getBreadInfo = (url) => {
   const breadConfig = {
     '/users': ['数据管理', '用户管理', '用户数据'],
-    '/umbrellas': ['数据管理', '图书管理', '图书数据'],
+    '/books': ['数据管理', '图书管理', '图书数据'],
     '/umbrellasEdit': ['数据管理', '图书管理', '编辑图书'],
     '/networks': ['数据管理', '网点管理', '网点数据'],
     '/distribution': ['数据管理', '分配管理', '分配数据']

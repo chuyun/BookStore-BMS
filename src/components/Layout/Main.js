@@ -7,8 +7,8 @@ import Network from '../Network/Network'
 import NetworkEdit from '../Network/NetworkEdit'
 import Distribution from '../Distribution/Distribution'
 import DistributionEdit from '../Distribution/DistributionEdit'
-import Umbrella from '../Umbrella/Umbrella'
-import UmbrellaEdit from '../Umbrella/UmbrellaEdit'
+import Book from '../Book/Book'
+import UmbrellaEdit from '../Book/UmbrellaEdit'
 import User from '../User/User'
 import { getBreadInfo } from '../../utils'
 import styles from './Main.less'
@@ -82,7 +82,7 @@ class Main extends Component {
                         <Switch>
                           <Route exact path="/" component={User} />
                           <Route path="/users" component={User} />
-                          <Route path="/umbrellas" component={Umbrella} />
+                          <Route path="/books" component={Book} />
                           <Route path="/umbrellasEdit" component={UmbrellaEdit} />
                           <Route path="/networks" component={Network} />
                           <Route path="/networksEdit" component={NetworkEdit} />
