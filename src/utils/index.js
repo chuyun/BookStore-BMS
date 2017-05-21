@@ -45,8 +45,7 @@ export const getBreadInfo = (url) => {
   const breadConfig = {
     '/users': ['数据管理', '用户管理', '用户数据'],
     '/books': ['数据管理', '图书管理', '图书数据'],
-    '/umbrellasEdit': ['数据管理', '图书管理', '编辑图书'],
-    '/networks': ['数据管理', '网点管理', '网点数据'],
+    '/order': ['数据管理', '订单管理', '网点数据'],
     '/distribution': ['数据管理', '分配管理', '分配数据']
   }
   let breadInfo = breadConfig[Object.keys(breadConfig).find((item, index) => item === url)]

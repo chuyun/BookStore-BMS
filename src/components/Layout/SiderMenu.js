@@ -29,11 +29,11 @@ class SiderMenu extends Component {
       case['/', '/users'].indexOf(location.pathname) !== -1:
         defaultSelectedKeys = '/users'
         break
-      case['/books', '/umbrellasEdit'].indexOf(location.pathname) !== -1:
+      case['/books'].indexOf(location.pathname) !== -1:
         defaultSelectedKeys = '/books'
         break
-      case['/networks', '/networksEdit'].indexOf(location.pathname) !== -1:
-        defaultSelectedKeys = '/networks'
+      case['/order'].indexOf(location.pathname) !== -1:
+        defaultSelectedKeys = '/order'
         break
       case['/distribution', '/distributionEdit'].indexOf(location.pathname) !== -1:
         defaultSelectedKeys = '/distribution'
@@ -61,7 +61,7 @@ class SiderMenu extends Component {
           >
             <Menu.Item key="/users">用户管理</Menu.Item>
             <Menu.Item key="/books">书籍管理</Menu.Item>
-            <Menu.Item key="/networks">网点管理</Menu.Item>
+            <Menu.Item key="/order">订单管理</Menu.Item>
             <Menu.Item key="/distribution">分配管理</Menu.Item>
           </SubMenu>
         </Menu>

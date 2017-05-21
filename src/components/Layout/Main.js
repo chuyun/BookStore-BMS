@@ -3,12 +3,10 @@ import { observer, inject } from 'mobx-react'
 import { Route, withRouter, Switch } from 'react-router-dom'
 import { Layout, Menu, Breadcrumb, Icon, Tabs } from 'antd'
 import SiderMenu from './SiderMenu'
-import Network from '../Network/Network'
-import NetworkEdit from '../Network/NetworkEdit'
+import Order from '../Order/Order'
 import Distribution from '../Distribution/Distribution'
 import DistributionEdit from '../Distribution/DistributionEdit'
 import Book from '../Book/Book'
-import UmbrellaEdit from '../Book/UmbrellaEdit'
 import User from '../User/User'
 import { getBreadInfo } from '../../utils'
 import styles from './Main.less'
@@ -83,9 +81,7 @@ class Main extends Component {
                           <Route exact path="/" component={User} />
                           <Route path="/users" component={User} />
                           <Route path="/books" component={Book} />
-                          <Route path="/umbrellasEdit" component={UmbrellaEdit} />
-                          <Route path="/networks" component={Network} />
-                          <Route path="/networksEdit" component={NetworkEdit} />
+                          <Route path="/order" component={Order} />
                           <Route path="/distribution" component={Distribution} />
                           <Route path="/distributionEdit" component={DistributionEdit} />
                           <Route render={() => <h1 className={styles.noMatch}>找不到此页面</h1>} />

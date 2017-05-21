@@ -11,11 +11,13 @@ import App from './components/App'
 import appStore from './stores/appStore'
 import  bookStore from './stores/bookStore'
 import userStore from './stores/userStore'
+import orderStore from './stores/orderStore'
 
 const stores = {
     appStore,
     bookStore,
-    userStore
+    userStore,
+    orderStore
 
 }
 console.log(stores);

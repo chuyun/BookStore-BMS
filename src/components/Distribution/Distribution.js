@@ -54,7 +54,7 @@ for (let i = 0; i < 100; i++) {
   data.push({
     key: i,
     id: i,
-    name: '科兴微银行',
+    name: '网点-总网点',
     total: 534,
     people: '老王',
     state: false,
@@ -73,14 +73,14 @@ class Distribution extends Component {
           <label>网点：</label>
           <Select defaultValue="0" style={{ width: 200 }}>
             <Option value="0">请选择网点</Option>
-            <Option value="1">罗湖建设银行大厦</Option>
-            <Option value="2">荣超商务中心</Option>
+            <Option value="1">江南大学</Option>
+            <Option value="2">商务中心</Option>
           </Select>
           <label>状态：</label>
           <Select defaultValue="0" style={{ width: 120 }}>
             <Option value="0">请选择状态</Option>
-            <Option value="1">已禁用</Option>
-            <Option value="2">未禁用</Option>
+            <Option value="1">已入库</Option>
+            <Option value="2">未入库</Option>
           </Select>
           <Button type="primary" icon="search">搜索</Button>
           <Button type="primary" icon="plus">添加</Button>
