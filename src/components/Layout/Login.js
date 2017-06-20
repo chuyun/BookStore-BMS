@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styles from './Login.less'
 import { observer, inject } from 'mobx-react'
 import { Button, Row, Form, Input } from 'antd'
+// import $ from 'jquery';
 
 const FormItem = Form.Item
 const form = Form.create()
@@ -17,16 +18,24 @@ class Login extends Component {
       loginSubmit(values)
     })
   }
+    //在React使用jQuery
+  //   componentDidMount(){
+  //       $(".btn1").click(function(){
+  //           $("p").css("color","red");
+  //       });
+  //
+  // }
 
   render() {
-
     const { getFieldDecorator } = this.props.form
-
     const { loading } = this.props.appStore
-
     return (
       <div className={styles.loginWrapper}>
+
         <form>
+          <FormItem>
+            <h2>网上书城-后台管理系统</h2>
+          </FormItem>
           <FormItem hasFeedback>
             {getFieldDecorator('username', {
               rules: [

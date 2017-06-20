@@ -5,7 +5,6 @@ import { Layout, Menu, Breadcrumb, Icon, Tabs } from 'antd'
 import SiderMenu from './SiderMenu'
 import Order from '../Order/Order'
 import Distribution from '../Distribution/Distribution'
-import DistributionEdit from '../Distribution/DistributionEdit'
 import Book from '../Book/Book'
 import User from '../User/User'
 import { getBreadInfo } from '../../utils'
@@ -83,7 +82,6 @@ class Main extends Component {
                           <Route path="/books" component={Book} />
                           <Route path="/order" component={Order} />
                           <Route path="/distribution" component={Distribution} />
-                          <Route path="/distributionEdit" component={DistributionEdit} />
                           <Route render={() => <h1 className={styles.noMatch}>找不到此页面</h1>} />
                         </Switch>
                       </div>

@@ -10,8 +10,6 @@ const FormItem = Form.Item;
 
 const {Content} = Layout
 
-
-
 //弹出层 ==> 修改用户信息
 const EditUserDetailForm = Form.create()(
     (props) => {
@@ -153,94 +151,21 @@ const AddUserForm = Form.create()(
 
 @inject('userStore') @observer
 class User extends Component {
-    //
-    //添加用户
-    @action.bound handleAddUserForm=(id)=>{
-        const form2 = this.form;
-        form2.validateFields((err, values) => {
-            if (err) {
-                message.error(`添加失败`);
-                return;
-            }
 
-            console.log('Received values of form: ', values);
-
-            const {userData, changeAddFormVisable, getUserData} = this.props.userStore
-
-            axios.post('http://127.0.0.1:3001/add/user', {
-                ...values
-            })
-                .then(action(function (res) {
-                    console.log(`then ${res}`);
-                    if (res === 'OK') {
-                        getUserData();
-                        message.success(`添加用户成功`);
-                    }else if(res==="exist"){
-                        message.error("用户已存在");
-                    } else {
-                        message.error(`添加用户失败`);
-                    }
-                }))
-                .catch(function (err) {
-                    console.log(err)
-                })
-
-            form2.resetFields();
-            changeAddFormVisable(false);
-        });
-    }
-
-    @action.bound handleSaveFormUser = (id) => {
-        const form = this.form;
-        form.validateFields((err, values) => {
-            if (err) {
-                message.error(`修改失败`);
-                return;
-            }
-
-            console.log('Received values of form: ', values);
-
-            const {userData, changeVisable, getUserData} = this.props.userStore
-
-            userData.forEach(function (item) {
-
-                if (item.id === values.id) {
-                    userData[item] = {...values};
-                }
-            })
-            console.log(userData);
-
-            axios.post('http://127.0.0.1:3001/edit/user', {
-                ...values
-            })
-                .then(action(function (res) {
-                    console.log(`then ${res}`);
-                    if (res === 'OK') {
-                        getUserData();
-                        message.success(`修改成功`);
-                    } else {
-                        message.error(`修改失败`);
-                    }
-                }))
-                .catch(function (err) {
-                    console.log(err)
-                })
-
-            form.resetFields();
-            changeVisable(false);
-        });
-    }
     @action.bound saveUserFormRef = (form) => {
         this.form = form;
+        console.log("SSS");
+        console.log(form);
     }
 
     @action.bound saveAddUserFormRef = (form) => {
         this.form = form;
+        console.log(form);
     }
     render() {
         const {userData, defaultValues, visible, loading,visible_addUserForm} = this.props.userStore
 
-        const {getUserData, handleCancel, delItem, handleAddFormCancel,onMenuClick,changeAddFormVisable,showAddUserModal} = this.props.userStore
+        const {getUserData, handleCancel, delItem, handleAddFormCancel,onMenuClick,changeAddFormVisable,showAddUserModal,saveAddUserFormRef,handleSaveFormUser,saveUserFormRef,handleAddUserForm} = this.props.userStore
 
         const columns = [
             {
@@ -327,7 +252,7 @@ class User extends Component {
                         ref={this.saveAddUserFormRef}
                         visible={visible}
                         onCancel={handleCancel}
-                        onCreate={this.handleSaveFormUser}
+                        onCreate={()=>handleSaveFormUser(this.form)}
                         defaultValues={defaultValues}
                     />
                     : null
@@ -337,7 +262,7 @@ class User extends Component {
                     ref={this.saveUserFormRef}
                     visible={visible_addUserForm}
                     onCancel={handleAddFormCancel}
-                    onCreate={this.handleAddUserForm}
+                    onCreate={()=>handleAddUserForm(this.form)}
                 />
             </Layout>
         )

@@ -34,13 +34,26 @@ app.use(hotMiddleware(compile, {
 //模拟登录接口
 router.post('/login', async (ctx, next) => {
 	await new Promise((resolve, reject) => {
-		setTimeout(resolve, 3000)
+		setTimeout(resolve, 1000)
 	})
 	console.log(ctx.request.body)
-	ctx.body = {
-		errorcode: 0,
-		errormsg: '登录成功'
-	}
+	if(ctx.request.body.username==="admin" && ctx.request.body.password==="admin"){
+        ctx.body = {
+            errorcode: 0,
+            errormsg: '登录成功'
+        }
+	}else if(ctx.request.body.username!=="admin"){
+        ctx.body = {
+            errorcode: 1,
+            errormsg: '用户名错误'
+        }
+	}else if(ctx.request.body.password!=="admin"){
+        ctx.body = {
+            errorcode: 1,
+            errormsg: '密码错误'
+        }
+    }
+
 })
 
 router.get('/favicon.ico', (ctx, next) => {

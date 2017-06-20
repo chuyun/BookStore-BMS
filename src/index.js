@@ -23,7 +23,6 @@ const stores = {
 console.log(stores);
 useStrict(true)
 
-
 ReactDOM.render(
     <Provider {...stores }>
         <Router basename="/">

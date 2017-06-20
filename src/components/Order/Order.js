@@ -73,22 +73,6 @@ const columns = [
   }
 ]
 
-// const data = []
-// for (let i = 0; i < 100; i++) {
-//   data.push({
-//     key: i,
-//     id: i,
-//     name: '科兴微银行',
-//     number: 20002,
-//     bank: 20002,
-//     district: '福田区',
-//     total: 534,
-//     shelves: 423,
-//     disabled: false,
-//     created_time: '2017-03-17'
-//   })
-// }
-
 
 @inject('orderStore') @observer
 class Order extends Component {

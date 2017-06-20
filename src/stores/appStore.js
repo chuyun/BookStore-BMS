@@ -1,10 +1,9 @@
 import { observable, action, computed, runInAction } from "mobx"
-
+import {message} from 'antd'
 import { login } from '../services/app'
 import { getBreadInfo } from '../utils'
 
 class appStore {
-
   @observable administratorInfo
   @observable isLogin
   @observable siderMode
@@ -46,10 +45,16 @@ class appStore {
 
   @action loginSubmit = async values => {
     try {
-      const data = await login(values)
-      runInAction(() => {
-        this.isLogin = true
-      })
+      const data = await login(values);
+      console.log(data)
+        if(data.errorcode===0){
+            runInAction(() => {
+                this.isLogin = true
+                message.success(`登录成功`);
+            })
+        }else {
+            message.error(`登录失败 ${data.errormsg}`);
+        }
     }
     catch (error) {
       console.log(error)
