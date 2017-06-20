@@ -1,3 +1,6 @@
+# 介绍
+网上书城配套后台管理系统
+
 # 安装及启动
 ## 1. 安装依赖 
 `npm install`
@@ -9,7 +12,7 @@
 `npm run build`
 # 介绍
 ## 1. 功能介绍
-### 一个简易的后台管理系统模板
+### 一个网上书城配套后台管理系统
 #### 实现组件懒加载功能，提取第三方库，样式的autoprefixer，样式采用less以及css modules
 ## 2. 使用技术
 ### [react](https://facebook.github.io/react/)
